@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siri Chandana Ravirala| Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f5f6f8;
+      color: #222;
+    }
+
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      background: #ffffff;
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #2a4d8f;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 120px 80px;
+      min-height: 100vh;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #2a4d8f;
+    }
+
+    /* HOME */
+    #home {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 160px;
+    }
+
+    #home h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    #home p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      color: #555;
+    }
+
+    /* SKILLS */
+    .skills-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .skill {
+      padding: 10px 18px;
+      background: #2a4d8f;
+      color: #fff;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* PROJECTS */
+    .project {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .project h3 {
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+      color: #2a4d8f;
+    }
+
+    /* CONTACT */
+    .contact p {
+      margin: 8px 0;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #ffffff;
+      font-size: 0.95rem;
+      color: #555;
+      box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">SIRI CHANDANA</div>
+    <ul>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#achievements">ACHIEVEMENTS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home">
+    <h1>Hello, I'm <span style="color:#2a4d8f;">Siri Chandana Ravirala</span></h1>
+    <p>Aspiring Web Developer | Python Enthusiast | AI Learner</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am currently pursuing my B.Tech at Vignan College. I completed my Intermediate at
+      Gautami Junior College and my 10th standard at Sankalp School.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-box">
+      <div class="skill">Python</div>
+      <div class="skill">Artificial Intelligence Basics</div>
+      <div class="skill">C Language</div>
+      <div class="skill">HTML</div>
+      <div class="skill">SQL</div>
+      <div class="skill">Communication Skills</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Color Object Detection using OpenCV</h3>
+      <p>A real-time color-based object detection system built using Python and OpenCV.</p>
+    </div>
+
+    <div class="project">
+      <h3>CardioPulse – Health Risk Prediction</h3>
+      <p>A machine-learning model that predicts possible health risks based on user parameters.</p>
+    </div>
+
+    <div class="project">
+      <h3>House Price Prediction</h3>
+      <p>A regression model that predicts house prices using ML algorithms.</p>
+    </div>
+
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <h2>Achievements</h2>
+    <p>• Successfully completed multiple real-time OpenCV and ML mini projects.</p>
+    <p>• Active learner with strong foundation in programming and analytics.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>Email: sirichandana@gmail.com</p>
+      <p>Phone: 9502940285</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Siri Chandana. All rights reserved.
+  </footer>
+
+</body>
+</html>
