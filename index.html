@@ -1,218 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Siri Chandana Ravirala| Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      scroll-behavior: smooth;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom styles can go here */
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
 
-    body {
-      background: #f5f6f8;
-      color: #222;
-    }
-
-    /* NAVBAR */
-    nav {
-      width: 100%;
-      background: #ffffff;
-      padding: 18px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      position: fixed;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav .logo {
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #2a4d8f;
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 120px 80px;
-      min-height: 100vh;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #2a4d8f;
-    }
-
-    /* HOME */
-    #home {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding-top: 160px;
-    }
-
-    #home h1 {
-      font-size: 3rem;
-      font-weight: 700;
-    }
-
-    #home p {
-      font-size: 1.3rem;
-      margin-top: 10px;
-      color: #555;
-    }
-
-    /* SKILLS */
-    .skills-box {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 15px;
-    }
-
-    .skill {
-      padding: 10px 18px;
-      background: #2a4d8f;
-      color: #fff;
-      border-radius: 20px;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    /* PROJECTS */
-    .project {
-      background: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
-
-    .project h3 {
-      margin-bottom: 8px;
-      font-size: 1.2rem;
-      color: #2a4d8f;
-    }
-
-    /* CONTACT */
-    .contact p {
-      margin: 8px 0;
-      font-size: 1.1rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #ffffff;
-      font-size: 0.95rem;
-      color: #555;
-      box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
-    }
-  </style>
+        body {
+            transition: opacity 0.3s ease;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between">
+                <div class="flex space-x-4">
+                    <!-- Logo -->
+                    <div>
+                        <a href="#" class="flex items-center py-5 px-2 text-gray-700">
+                            <span class="font-bold text-2xl">Sreeraga's Portfolio</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Primary Nav -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="#about" class="text-xl py-5 px-3 text-gray-700 hover:text-purple-600">About</a>
+                    <a href="#education" class="text-xl py-5 px-3 text-gray-700 hover:text-purple-600">Education</a>
+                    <a href="#skills" class="text-xl py-5 px-3 text-gray-700 hover:text-purple-600">Skills</a>
+                    <a href="#projects" class="text-xl py-5 px-3 text-gray-700 hover:text-purple-600">Projects</a>
+                    <a href="#certifications" class="text-xl py-5 px-3 text-gray-700 hover:text-purple-600">Certifications</a>
+                    <a href="#contact" class="text-xl py-5 px-3 text-gray-700 hover:text-purple-600">Contact</a>
+                </div>
+                
+                <!-- Mobile button -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden bg-white">
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-200">About</a>
+            <a href="#education" class="block py-2 px-4 text-sm hover:bg-gray-200">Education</a>
+            <a href="#skills" class="block py-2 px-4 text-sm hover:bg-gray-200">Skills</a>
+            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-200">Projects</a>
+            <a href="#certifications" class="block py-2 px-4 text-sm hover:bg-gray-200">Certifications</a>
+            <a href="#internships" class="block py-2 px-4 text-sm hover:bg-gray-200">Internships</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-200">Contact</a>
+        </div>
+    </nav>
 
-  <nav>
-    <div class="logo">SIRI CHANDANA</div>
-    <ul>
-      <li><a href="#home">HOME</a></li>
-      <li><a href="#about">ABOUT</a></li>
-      <li><a href="#skills">SKILLS</a></li>
-      <li><a href="#projects">PROJECTS</a></li>
-      <li><a href="#achievements">ACHIEVEMENTS</a></li>
-      <li><a href="#contact">CONTACT</a></li>
-    </ul>
-  </nav>
-
-  <!-- HOME -->
-  <section id="home">
-    <h1>Hello, I'm <span style="color:#2a4d8f;">Siri Chandana Ravirala</span></h1>
-    <p>Aspiring Web Developer | Python Enthusiast | AI Learner</p>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am currently pursuing my B.Tech at Vignan College. I completed my Intermediate at
-      Gautami Junior College and my 10th standard at Sankalp School.
+    <section id="#" class="relative h-screen w-full overflow-hidden"> <!-- Full viewport height -->
+  <!-- Animated Gradient Background -->
+  <div class="absolute inset-0 bg-gradient-to-r from-blue-600 via-pink-600 to-purple-600 animate-gradient bg-[length:400%_400%]"></div>
+  
+  <!-- Content Container -->
+  <div class="relative h-full flex flex-col justify-center items-center text-center px-6">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">
+      Hi, I'm <span class="text-yellow-300 animate-pulse">Siri Chandana</span>
+    </h1>
+    <p class="text-xl md:text-2xl mb-8 text-white/90">
+      Frontend Developer | Python Programmer | Tech Enthusiast
     </p>
-  </section>
+    <a href="#contact" class="bg-white text-purple-800 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+      Get In Touch
+    </a>
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-box">
-      <div class="skill">Python</div>
-      <div class="skill">Artificial Intelligence Basics</div>
-      <div class="skill">C Language</div>
-      <div class="skill">HTML</div>
-      <div class="skill">SQL</div>
-      <div class="skill">Communication Skills</div>
+<style>
+  /* Keyframes for gradient animation */
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .animate-gradient {
+    animation: gradient 15s ease infinite;
+  }
+</style>
+
+<section id="about" class="py-16 bg-gradient-to-b from-purple-50 to-white">  
+    <div class="max-w-5xl mx-auto px-6">  
+        <h2 class="text-3xl font-bold text-center mb-10 text-purple-800 ">About Me</h2>  
+        
+        <div class="flex flex-col md:flex-row items-center gap-8">  
+            <!-- Text Content -->
+            <div class="md:w-full space-y-5">  
+                <p class="text-lg leading-snug text-gray-700">  
+                    Hello! I'm Siri chandana, a passionate B.Tech IT student with strong foundations in web technologies (HTML5, CSS3, and JavaScript) and Python programming. 
+                    I can write efficient SQL queries to extract, analyze, and manage data for meaningful insights.
+                    I enjoy creating interactive dashboards in Power BI that tell compelling data stories. 
+                </p>
+                
+                <p class="text-lg leading-snug text-gray-700">
+                    Beyond coding, I'm a curious learner who loves exploring new technologies. 
+                    My creative side flourishes through sketching, crafting, and singing—activities that balance my technical world. 
+                    Whether it's debugging code or designing art, I approach challenges with patience and attention to detail. 
+                </p>
+                
+                <p class="text-lg leading-snug text-gray-700">
+                    I believe in continuous growth and thrive where logic meets creativity. 
+                    Let's connect to discuss tech, data, or even the latest DIY trends!
+                </p>
+
+                <!-- Skills Tags -->
+                <!-- <div class="pt-4 flex flex-wrap gap-3">
+                    <span class="px-3 py-1 text-sm bg-purple-100 text-purple-800 rounded-full">HTML5/CSS3</span>
+                    <span class="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full">JavaScript</span>
+                    <span class="px-3 py-1 text-sm bg-yellow-100 text-yellow-800 rounded-full">Python</span>
+                    <span class="px-3 py-1 text-sm bg-green-100 text-green-800 rounded-full">SQL</span>
+                    <span class="px-3 py-1 text-sm bg-pink-100 text-pink-800 rounded-full">Power BI</span>
+                </div> -->
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-purple-800">Education</h2>
+            
+            <div class="space-y-8">
+                <!-- Education Item 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex flex-col md:flex-row justify-between">
+                        <div class="mb-4 md:mb-0">
+                            <h3 class="text-xl font-bold text-blue-300">B.Tech in Information Technology</h3>
+                            <p class="text-lg text-gray-800">Vignan Institute of Technology and Science</p>
+                            <p class="text-gray-700">Current CGPA:</p>
+                        </div>
+                        <div class="text-purple-500 font-semibold">
+                            <p>2023 - 2027</p><br>
+                            <p>8.75</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education Item 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex flex-col md:flex-row justify-between">
+                        <div class="mb-4 md:mb-0">
+                            <h3 class="text-xl font-bold text-blue-300">MPC</h3>
+                            <p class="text-lg text-gray-800">Goutami Junior College</p>
+                            <p class="text-gray-700">Percentage:</p>
+                        </div>
+                        <div class="text-purple-500 font-semibold">
+                            <p>2021 - 2023</p><br>
+                            <p>97.2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="project">
-      <h3>Color Object Detection using OpenCV</h3>
-      <p>A real-time color-based object detection system built using Python and OpenCV.</p>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-purple-800">My Skills</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Skill 1 -->
+                <div class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="text-purple-600 mb-4">
+                        <i class="fab fa-html5 fa-3x"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">HTML5</h3>
+                </div>
+                
+                <!-- Skill 2 -->
+                <div class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fab fa-css3-alt fa-3x"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">CSS3</h3>
+                </div>
+                
+                <!-- Skill 3 -->
+                <div class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="text-yellow-500 mb-4">
+                        <i class="fab fa-js fa-3x"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">JavaScript</h3>
+                </div>
+                
+                <!-- Skill 4 -->
+                <div class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="text-blue-400 mb-4">
+                        <i class="fab fa-python fa-3x"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Python</h3>
+                </div>
+                
+                <!-- Skill 7 -->
+                <div class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-database fa-3x"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">MySQL</h3>
+                </div>
+                
+                <!-- Skill 8 -->
+                <div class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="text-yellow-500 mb-4">
+                        <i class="fab fa-microsoft fa-3x"></i> 
+                </div>
+                    <h3 class="font-bold text-lg mb-2">Power BI</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-purple-800">My Projects</h2>
+            
+            <div class="grid md:grid-cols lg:grid-cols gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Color Based-Object Detection</h3>
+                        <p class="text-gray-600 mb-4">Real-time color detection using open CV. Features: Detects one specific color, Identifies centroid of any object, We can also save the images.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">open CV</span>
+                        </div>
+                        <!-- <a href="#" class="text-purple-600 font-semibold hover:text-purple-800">View Project →</a> -->
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">House Price Prediction – ML Prediction System</h3>
+                        <p class="text-gray-600 mb-4"> House Price predictor built with scikit-learn, Data preprocessing, Model training and evaluation  and simple UI.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">pandas</span>
+                            <span class="bg-pink-100 text-yellow-800 text-xs px-3 py-1 rounded-full">matplotlib</span>
+                        </div>
+                        <!-- <a href="#" class="text-purple-600 font-semibold hover:text-purple-800">View Project →</a> -->
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <!-- <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Weather Dashboard</h3>
+                        <p class="text-gray-600 mb-4">Real-time weather information with 5-day forecast for any location.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">API</span>
+                        </div>
+                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-800">View Project →</a> 
+                    </div>
+                </div>
+            </div> -->
+            
+            <!-- <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-purple-600 text-white px-6 py-3 rounded-full font-bold hover:bg-purple-700 transition duration-300">
+                    View All Projects
+                </a>
+            </div> -->
+        </div>
+    </section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="py-20 bg-white-100">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-purple-800">Certifications</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Certification 1 -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <div class="flex items-start">
+                    <div class="text-purple-600 mr-4 text-3xl">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Programming in Java</h3>
+                        <p class="text-gray-600">Swayam (2025)</p>
+                        <p class="mt-2 text-gray-700">
+                            Mastered core Java concepts including OOP, i/o handling, exceptions, and JDBC through this 12-week course.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certification 2 -->
+            <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <div class="flex items-start">
+                    <div class="text-yellow-500 mr-4 text-3xl">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Power BI workshop</h3>
+                        <p class="text-gray-600">OfficeMaster (2025)</p>
+                        <p class="mt-2 text-gray-700">
+                            Learned to create AI-Powered interactive dashboards using Power BI.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+           </div>
+</section>
+
+<!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-purple-800">Get In Touch</h2>
+        
+        <div class="flex justify-center">
+            <div class="w-full md:w-1/2">
+                <div class="bg-gray-100 p-8 rounded-lg">
+                    <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-purple-600 mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Location</h4>
+                                <p class="text-gray-600">Hyderabad, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-purple-600 mr-4 mt-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-gray-600">sirichandanaR@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-purple-600 mr-4 mt-1">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Phone</h4>
+                                <p class="text-gray-600">+91 9148971980</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/ravirala-sirichandana" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-700 hover:text-purple-600">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                            <a href="siri-chandana-ravirala-b012b6360?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
 
-    <div class="project">
-      <h3>CardioPulse – Health Risk Prediction</h3>
-      <p>A machine-learning model that predicts possible health risks based on user parameters.</p>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p>© 2025 Siri chandana. All rights reserved.</p>
+            <p class="mt-2 text-gray-400">Designed and built using HTML and Tailwind CSS</p>
+        </div>
+    </footer>
 
-    <div class="project">
-      <h3>House Price Prediction</h3>
-      <p>A regression model that predicts house prices using ML algorithms.</p>
-    </div>
-
-  </section>
-
-  <!-- ACHIEVEMENTS -->
-  <section id="achievements">
-    <h2>Achievements</h2>
-    <p>• Successfully completed multiple real-time OpenCV and ML mini projects.</p>
-    <p>• Active learner with strong foundation in programming and analytics.</p>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact">
-      <p>Email: sirichandana@gmail.com</p>
-      <p>Phone: 9502940285</p>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 Siri Chandana. All rights reserved.
-  </footer>
-
+    <!-- JavaScript for mobile menu -->
+    <script>
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth page transitions
+            document.querySelectorAll('a[href^="certifications.html"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.body.style.opacity = '0.8';
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 300);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
